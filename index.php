@@ -3,8 +3,6 @@
 <head>
 	<title>Simple To-Do List</title>
 	<li rel="stylesheet" type="text/css"  href="css/main.css"/>
-	<li rel="stylesheet" type="text/css"  href="css/normalize.css"/>
-	<li rel="stylesheet" type="text/css"  href="css/reset.css"/>
 </head>
 <body>
 	<div class="wrap"> 
@@ -29,7 +27,7 @@
 				?>
 			</ul>
 		</div>
-		<form class="add-new-task" autocomlete="off">
+		<form class="add-new-task" autocomplete="off">
 			<input type="text" name="new-task" placeholder="Add new item..."/>
 		</form>
 	</div>
@@ -41,15 +39,15 @@
 
 	function add_task(){
 		$('.add-new-task').submit(function() {
-			var new_task =  $('add-new-task input[name=new-task]').val();
+			var new_task =  $('.add-new-task input[name=new-task]').val();
 
 			//getting the form from the text field, send it to add_task, to give confirmation of newly added item
 			if(new_task != '') {
-				$.post('includes/add-task.php', {task: new_task}, function(data){
+				$.post('Includes/add-task.php', {task: new_task}, function(data){
 					$('add-new-task input[name=new-task]').val();
-						$(data.appendTo('task-list ul').hide().fadeIn();
+						$(data.appendTo('.task-list ul').hide().fadeIn();
 				});
-			};
+			}
 			return false;
 		});
 	}
@@ -58,7 +56,7 @@
 		var current_element = $(this);
 		var task_id = $(this).attr('id');
 
-		$.post('inludes/delete-task.php', {id: task_id}, function(){
+		$.post('Includes/delete-task.php', {id: task_id}, function(){
 			current_element.parent().fadeOut("fast", function(){
 			$(this).remove();
 			});
