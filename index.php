@@ -8,7 +8,7 @@
 	<div class="wrap"> 
 		<div class="task-list">
 			<ul>
-				<?php require("includes/connect.php"); 
+				<?php require("Includes/connect.php"); 
 				$mysqli = new mysqli('localhost', 'root', 'root', 'todo');
 				$query = "SELECT * FROM tasks ORDER BY date ASC, time ASC";
 				if ($result = $mysqli->query($query)) {
