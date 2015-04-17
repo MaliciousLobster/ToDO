@@ -2,7 +2,9 @@
 <html>
 <head>
 	<title>Simple To-Do List</title>
-	<li rel="stylesheet" type="text/css"  href="css/main.csss"/>
+	<li rel="stylesheet" type="text/css"  href="css/main.css"/>
+	<li rel="stylesheet" type="text/css"  href="css/normalize.css"/>
+	<li rel="stylesheet" type="text/css"  href="css/reset.css"/>
 </head>
 <body>
 	<div class="wrap"> 
